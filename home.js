@@ -25,7 +25,12 @@ let fathername = document.getElementById('fathername')
 let email = document.getElementById('email')
 let course = document.getElementById('course')
 let cnic = document.getElementById('cnic')
+let image = document.getElementById('image')
 const userdata = await getDocs(collection(db, "Registration"));
+
+userdata.forEach((doc) => {
+  image.src = `${doc.data().Image}`
+});
     
     userdata.forEach((doc) => {
       name.innerHTML = `<div> Student  Name : ${doc.data().name}</div>`
